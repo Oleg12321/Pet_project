@@ -28,13 +28,13 @@ const dialogsReducer = (state = initialState, action) => {
         let body = action.newMessageBody 
 
         return {...state, 
-                messages: [...state.messages, {id: 6, message: body}] }
+                messages: [...state.messages, {id: 6, message: body}],
+                newMessageBody: '' }
       default: 
         return state
     }
 }
 
 export const sendMessageCreator = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody })
-
 
 export default dialogsReducer
